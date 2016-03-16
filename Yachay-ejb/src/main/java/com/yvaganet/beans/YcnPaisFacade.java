@@ -30,14 +30,14 @@ public class YcnPaisFacade extends AbstractFacade<YcnPais> implements YcnPaisFac
     }
 
     @Override
-    public boolean AddPais(String strNombrePais) {
+    public boolean AddPais(String strNombre) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         
         try {
             YcnPais pais = new YcnPais();
-            pais.setPasNombre(strNombrePais);
+            pais.setPasNombre(strNombre);
             em.persist(pais);
-        return true;
+            return true;
         } catch (Exception e) {
             return false;
         }

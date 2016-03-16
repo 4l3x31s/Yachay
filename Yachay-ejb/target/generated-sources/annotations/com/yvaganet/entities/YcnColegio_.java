@@ -1,6 +1,7 @@
 package com.yvaganet.entities;
 
 import com.yvaganet.entities.YcnEmail;
+import com.yvaganet.entities.YcnImagenColegio;
 import com.yvaganet.entities.YcnLocalidad;
 import com.yvaganet.entities.YcnNivelAcademico;
 import com.yvaganet.entities.YcnTelefono;
@@ -11,14 +12,15 @@ import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-03-15T23:24:35")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-03-16T01:21:18")
 @StaticMetamodel(YcnColegio.class)
 public class YcnColegio_ { 
 
     public static volatile SingularAttribute<YcnColegio, String> colHistoria;
     public static volatile SingularAttribute<YcnColegio, String> colLogo;
-    public static volatile SingularAttribute<YcnColegio, YcnNivelAcademico> colNacId;
+    public static volatile SingularAttribute<YcnColegio, Integer> colNacId;
     public static volatile SingularAttribute<YcnColegio, String> colNombre;
+    public static volatile ListAttribute<YcnColegio, YcnNivelAcademico> ycnNivelAcademicoList;
     public static volatile SingularAttribute<YcnColegio, String> colMision;
     public static volatile SingularAttribute<YcnColegio, YcnEmail> colEmlId;
     public static volatile SingularAttribute<YcnColegio, YcnLocalidad> colLocId;
@@ -28,6 +30,7 @@ public class YcnColegio_ {
     public static volatile SingularAttribute<YcnColegio, String> colInfraestructura;
     public static volatile SingularAttribute<YcnColegio, String> colDireccion;
     public static volatile SingularAttribute<YcnColegio, YcnTelefono> colTelId;
+    public static volatile ListAttribute<YcnColegio, YcnImagenColegio> ycnImagenColegioList;
     public static volatile SingularAttribute<YcnColegio, YcnTipoColegio> colTueId;
     public static volatile SingularAttribute<YcnColegio, String> colTurno;
     public static volatile SingularAttribute<YcnColegio, Integer> colId;

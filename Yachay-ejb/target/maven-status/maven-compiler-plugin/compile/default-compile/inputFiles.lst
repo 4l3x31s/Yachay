@@ -1,9 +1,11 @@
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\entities\YcnPais.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\AbstractFacade.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnEmailFacade.java
+C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnImagenColegioFacadeLocal.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\entities\YcnEmail.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnTipoDocumentoFacade.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\NewSessionBean.java
+C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnImagenColegioFacade.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\entities\YcnLugarExpedicion.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnCiudadFacadeLocal.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnLugarExpedicionFacadeLocal.java
@@ -34,5 +36,6 @@ C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnCiudadFacade.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\entities\YcnUsuario.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnUsuarioColegioFacadeLocal.java
+C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\entities\YcnImagenColegio.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnPaisFacade.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnTipoColegioFacadeLocal.java

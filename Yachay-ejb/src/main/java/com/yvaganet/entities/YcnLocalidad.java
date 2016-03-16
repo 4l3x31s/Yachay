@@ -49,11 +49,11 @@ public class YcnLocalidad implements Serializable {
     @Size(min = 1, max = 150)
     @Column(name = "LOC_NOMBRE")
     private String locNombre;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "colLocId")
+    private List<YcnColegio> ycnColegioList;
     @JoinColumn(name = "LOC_CIU_ID", referencedColumnName = "CIU_ID")
     @ManyToOne(optional = false)
     private YcnCiudad locCiuId;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "colLocId")
-    private List<YcnColegio> ycnColegioList;
 
     public YcnLocalidad() {
     }
@@ -83,14 +83,6 @@ public class YcnLocalidad implements Serializable {
         this.locNombre = locNombre;
     }
 
-    public YcnCiudad getLocCiuId() {
-        return locCiuId;
-    }
-
-    public void setLocCiuId(YcnCiudad locCiuId) {
-        this.locCiuId = locCiuId;
-    }
-
     @XmlTransient
     public List<YcnColegio> getYcnColegioList() {
         return ycnColegioList;
@@ -98,6 +90,14 @@ public class YcnLocalidad implements Serializable {
 
     public void setYcnColegioList(List<YcnColegio> ycnColegioList) {
         this.ycnColegioList = ycnColegioList;
+    }
+
+    public YcnCiudad getLocCiuId() {
+        return locCiuId;
+    }
+
+    public void setLocCiuId(YcnCiudad locCiuId) {
+        this.locCiuId = locCiuId;
     }
 
     @Override

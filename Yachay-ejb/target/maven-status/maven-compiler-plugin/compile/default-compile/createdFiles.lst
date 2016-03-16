@@ -29,12 +29,16 @@ com\yvaganet\entities\YcnEmail_.class
 com\yvaganet\entities\YcnLocalidad.class
 com\yvaganet\entities\YcnPais_.class
 com\yvaganet\beans\YcnUsuarioColegioFacadeLocal.class
+com\yvaganet\beans\YcnImagenColegioFacade.class
 com\yvaganet\beans\YcnTipoColegioFacade.class
+com\yvaganet\entities\YcnImagenColegio.class
 com\yvaganet\entities\YcnTipoDocumento_.class
 com\yvaganet\beans\YcnNivelAcademicoFacadeLocal.class
 com\yvaganet\beans\YcnUsuarioColegioFacade.class
 com\yvaganet\entities\YcnTipoColegio.class
+com\yvaganet\beans\YcnImagenColegioFacadeLocal.class
 com\yvaganet\beans\YcnTipoDocumentoFacade.class
+com\yvaganet\entities\YcnImagenColegio_.class
 com\yvaganet\beans\YcnPaisFacadeLocal.class
 com\yvaganet\entities\YcnUsuarioColegio_.class
 com\yvaganet\entities\YcnTelefono.class

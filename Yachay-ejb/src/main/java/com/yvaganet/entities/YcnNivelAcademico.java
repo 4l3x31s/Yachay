@@ -6,20 +6,19 @@
 package com.yvaganet.entities;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -43,8 +42,9 @@ public class YcnNivelAcademico implements Serializable {
     @Size(max = 150)
     @Column(name = "NAC_NIVELES")
     private String nacNiveles;
-    @OneToMany(mappedBy = "colNacId")
-    private List<YcnColegio> ycnColegioList;
+    @JoinColumn(name = "NAC_COL_ID", referencedColumnName = "COL_ID")
+    @ManyToOne
+    private YcnColegio nacColId;
 
     public YcnNivelAcademico() {
     }
@@ -69,13 +69,12 @@ public class YcnNivelAcademico implements Serializable {
         this.nacNiveles = nacNiveles;
     }
 
-    @XmlTransient
-    public List<YcnColegio> getYcnColegioList() {
-        return ycnColegioList;
+    public YcnColegio getNacColId() {
+        return nacColId;
     }
 
-    public void setYcnColegioList(List<YcnColegio> ycnColegioList) {
-        this.ycnColegioList = ycnColegioList;
+    public void setNacColId(YcnColegio nacColId) {
+        this.nacColId = nacColId;
     }
 
     @Override

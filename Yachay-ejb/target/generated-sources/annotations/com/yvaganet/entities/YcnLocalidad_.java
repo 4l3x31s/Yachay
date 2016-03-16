@@ -7,13 +7,13 @@ import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-03-15T23:24:35")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-03-16T01:21:18")
 @StaticMetamodel(YcnLocalidad.class)
 public class YcnLocalidad_ { 
 
     public static volatile SingularAttribute<YcnLocalidad, String> locNombre;
     public static volatile SingularAttribute<YcnLocalidad, Integer> locId;
-    public static volatile SingularAttribute<YcnLocalidad, YcnCiudad> locCiuId;
     public static volatile ListAttribute<YcnLocalidad, YcnColegio> ycnColegioList;
+    public static volatile SingularAttribute<YcnLocalidad, YcnCiudad> locCiuId;
 
 }

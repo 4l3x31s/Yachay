@@ -36,6 +36,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "YcnColegio.findAll", query = "SELECT y FROM YcnColegio y"),
     @NamedQuery(name = "YcnColegio.findByColId", query = "SELECT y FROM YcnColegio y WHERE y.colId = :colId"),
+    @NamedQuery(name = "YcnColegio.findByColNacId", query = "SELECT y FROM YcnColegio y WHERE y.colNacId = :colNacId"),
     @NamedQuery(name = "YcnColegio.findByColNombre", query = "SELECT y FROM YcnColegio y WHERE y.colNombre = :colNombre"),
     @NamedQuery(name = "YcnColegio.findByColSie", query = "SELECT y FROM YcnColegio y WHERE y.colSie = :colSie"),
     @NamedQuery(name = "YcnColegio.findByColLogo", query = "SELECT y FROM YcnColegio y WHERE y.colLogo = :colLogo"),
@@ -48,6 +49,8 @@ public class YcnColegio implements Serializable {
     @Basic(optional = false)
     @Column(name = "COL_ID")
     private Integer colId;
+    @Column(name = "COL_NAC_ID")
+    private Integer colNacId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 150)
@@ -105,14 +108,15 @@ public class YcnColegio implements Serializable {
     @JoinColumn(name = "COL_LOC_ID", referencedColumnName = "LOC_ID")
     @ManyToOne(optional = false)
     private YcnLocalidad colLocId;
-    @JoinColumn(name = "COL_NAC_ID", referencedColumnName = "NAC_ID")
-    @ManyToOne
-    private YcnNivelAcademico colNacId;
     @JoinColumn(name = "COL_TEL_ID", referencedColumnName = "TEL_ID")
     @ManyToOne
     private YcnTelefono colTelId;
+    @OneToMany(mappedBy = "imgColId")
+    private List<YcnImagenColegio> ycnImagenColegioList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "ucoColId")
     private List<YcnUsuarioColegio> ycnUsuarioColegioList;
+    @OneToMany(mappedBy = "nacColId")
+    private List<YcnNivelAcademico> ycnNivelAcademicoList;
 
     public YcnColegio() {
     }
@@ -135,6 +139,14 @@ public class YcnColegio implements Serializable {
 
     public void setColId(Integer colId) {
         this.colId = colId;
+    }
+
+    public Integer getColNacId() {
+        return colNacId;
+    }
+
+    public void setColNacId(Integer colNacId) {
+        this.colNacId = colNacId;
     }
 
     public String getColNombre() {
@@ -249,14 +261,6 @@ public class YcnColegio implements Serializable {
         this.colLocId = colLocId;
     }
 
-    public YcnNivelAcademico getColNacId() {
-        return colNacId;
-    }
-
-    public void setColNacId(YcnNivelAcademico colNacId) {
-        this.colNacId = colNacId;
-    }
-
     public YcnTelefono getColTelId() {
         return colTelId;
     }
@@ -266,12 +270,30 @@ public class YcnColegio implements Serializable {
     }
 
     @XmlTransient
+    public List<YcnImagenColegio> getYcnImagenColegioList() {
+        return ycnImagenColegioList;
+    }
+
+    public void setYcnImagenColegioList(List<YcnImagenColegio> ycnImagenColegioList) {
+        this.ycnImagenColegioList = ycnImagenColegioList;
+    }
+
+    @XmlTransient
     public List<YcnUsuarioColegio> getYcnUsuarioColegioList() {
         return ycnUsuarioColegioList;
     }
 
     public void setYcnUsuarioColegioList(List<YcnUsuarioColegio> ycnUsuarioColegioList) {
         this.ycnUsuarioColegioList = ycnUsuarioColegioList;
+    }
+
+    @XmlTransient
+    public List<YcnNivelAcademico> getYcnNivelAcademicoList() {
+        return ycnNivelAcademicoList;
+    }
+
+    public void setYcnNivelAcademicoList(List<YcnNivelAcademico> ycnNivelAcademicoList) {
+        this.ycnNivelAcademicoList = ycnNivelAcademicoList;
     }
 
     @Override

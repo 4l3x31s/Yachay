@@ -10,6 +10,7 @@ import com.yvaganet.entities.YcnPais;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.inject.Named;
 
 /**
  *

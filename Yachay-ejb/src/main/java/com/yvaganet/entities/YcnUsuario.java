@@ -90,14 +90,14 @@ public class YcnUsuario implements Serializable {
     @Size(max = 1)
     @Column(name = "USR_ESTADO")
     private String usrEstado;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "ucoUsrId")
+    private List<YcnUsuarioColegio> ycnUsuarioColegioList;
     @JoinColumn(name = "USR_TDO_ID", referencedColumnName = "TDO_ID")
     @ManyToOne
     private YcnTipoDocumento usrTdoId;
     @JoinColumn(name = "USR_LEX_ID", referencedColumnName = "LEX_ID")
     @ManyToOne
     private YcnLugarExpedicion usrLexId;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "ucoUsrId")
-    private List<YcnUsuarioColegio> ycnUsuarioColegioList;
 
     public YcnUsuario() {
     }
@@ -194,6 +194,15 @@ public class YcnUsuario implements Serializable {
         this.usrEstado = usrEstado;
     }
 
+    @XmlTransient
+    public List<YcnUsuarioColegio> getYcnUsuarioColegioList() {
+        return ycnUsuarioColegioList;
+    }
+
+    public void setYcnUsuarioColegioList(List<YcnUsuarioColegio> ycnUsuarioColegioList) {
+        this.ycnUsuarioColegioList = ycnUsuarioColegioList;
+    }
+
     public YcnTipoDocumento getUsrTdoId() {
         return usrTdoId;
     }
@@ -208,15 +217,6 @@ public class YcnUsuario implements Serializable {
 
     public void setUsrLexId(YcnLugarExpedicion usrLexId) {
         this.usrLexId = usrLexId;
-    }
-
-    @XmlTransient
-    public List<YcnUsuarioColegio> getYcnUsuarioColegioList() {
-        return ycnUsuarioColegioList;
-    }
-
-    public void setYcnUsuarioColegioList(List<YcnUsuarioColegio> ycnUsuarioColegioList) {
-        this.ycnUsuarioColegioList = ycnUsuarioColegioList;
     }
 
     @Override
