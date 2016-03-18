@@ -28,5 +28,5 @@ public class YcnColegioFacade extends AbstractFacade<YcnColegio> implements YcnC
     public YcnColegioFacade() {
         super(YcnColegio.class);
     }
-    
+
 }

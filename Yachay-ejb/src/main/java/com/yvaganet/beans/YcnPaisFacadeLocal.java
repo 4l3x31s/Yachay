@@ -30,5 +30,5 @@ public interface YcnPaisFacadeLocal {
 
     int count();
     
-    boolean AddPais(String strNombre);
+    boolean AddPais(String nombrePais);
 }

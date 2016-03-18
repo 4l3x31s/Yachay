@@ -29,5 +29,5 @@ public interface YcnColegioFacadeLocal {
     List<YcnColegio> findRange(int[] range);
 
     int count();
-    
+
 }

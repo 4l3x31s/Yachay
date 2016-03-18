@@ -36,7 +36,6 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "YcnColegio.findAll", query = "SELECT y FROM YcnColegio y"),
     @NamedQuery(name = "YcnColegio.findByColId", query = "SELECT y FROM YcnColegio y WHERE y.colId = :colId"),
-    @NamedQuery(name = "YcnColegio.findByColNacId", query = "SELECT y FROM YcnColegio y WHERE y.colNacId = :colNacId"),
     @NamedQuery(name = "YcnColegio.findByColNombre", query = "SELECT y FROM YcnColegio y WHERE y.colNombre = :colNombre"),
     @NamedQuery(name = "YcnColegio.findByColSie", query = "SELECT y FROM YcnColegio y WHERE y.colSie = :colSie"),
     @NamedQuery(name = "YcnColegio.findByColLogo", query = "SELECT y FROM YcnColegio y WHERE y.colLogo = :colLogo"),
@@ -49,8 +48,6 @@ public class YcnColegio implements Serializable {
     @Basic(optional = false)
     @Column(name = "COL_ID")
     private Integer colId;
-    @Column(name = "COL_NAC_ID")
-    private Integer colNacId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 150)
@@ -99,22 +96,19 @@ public class YcnColegio implements Serializable {
     @Size(min = 1, max = 65535)
     @Column(name = "COL_DIRECCION")
     private String colDireccion;
-    @JoinColumn(name = "COL_TUE_ID", referencedColumnName = "TUE_ID")
-    @ManyToOne
-    private YcnTipoColegio colTueId;
-    @JoinColumn(name = "COL_EML_ID", referencedColumnName = "EML_ID")
-    @ManyToOne
-    private YcnEmail colEmlId;
     @JoinColumn(name = "COL_LOC_ID", referencedColumnName = "LOC_ID")
     @ManyToOne(optional = false)
     private YcnLocalidad colLocId;
-    @JoinColumn(name = "COL_TEL_ID", referencedColumnName = "TEL_ID")
-    @ManyToOne
-    private YcnTelefono colTelId;
+    @OneToMany(mappedBy = "telColId")
+    private List<YcnTelefono> ycnTelefonoList;
+    @OneToMany(mappedBy = "tueColId")
+    private List<YcnTipoColegio> ycnTipoColegioList;
     @OneToMany(mappedBy = "imgColId")
     private List<YcnImagenColegio> ycnImagenColegioList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "ucoColId")
     private List<YcnUsuarioColegio> ycnUsuarioColegioList;
+    @OneToMany(mappedBy = "emlColId")
+    private List<YcnEmail> ycnEmailList;
     @OneToMany(mappedBy = "nacColId")
     private List<YcnNivelAcademico> ycnNivelAcademicoList;
 
@@ -139,14 +133,6 @@ public class YcnColegio implements Serializable {
 
     public void setColId(Integer colId) {
         this.colId = colId;
-    }
-
-    public Integer getColNacId() {
-        return colNacId;
-    }
-
-    public void setColNacId(Integer colNacId) {
-        this.colNacId = colNacId;
     }
 
     public String getColNombre() {
@@ -237,22 +223,6 @@ public class YcnColegio implements Serializable {
         this.colDireccion = colDireccion;
     }
 
-    public YcnTipoColegio getColTueId() {
-        return colTueId;
-    }
-
-    public void setColTueId(YcnTipoColegio colTueId) {
-        this.colTueId = colTueId;
-    }
-
-    public YcnEmail getColEmlId() {
-        return colEmlId;
-    }
-
-    public void setColEmlId(YcnEmail colEmlId) {
-        this.colEmlId = colEmlId;
-    }
-
     public YcnLocalidad getColLocId() {
         return colLocId;
     }
@@ -261,12 +231,22 @@ public class YcnColegio implements Serializable {
         this.colLocId = colLocId;
     }
 
-    public YcnTelefono getColTelId() {
-        return colTelId;
+    @XmlTransient
+    public List<YcnTelefono> getYcnTelefonoList() {
+        return ycnTelefonoList;
     }
 
-    public void setColTelId(YcnTelefono colTelId) {
-        this.colTelId = colTelId;
+    public void setYcnTelefonoList(List<YcnTelefono> ycnTelefonoList) {
+        this.ycnTelefonoList = ycnTelefonoList;
+    }
+
+    @XmlTransient
+    public List<YcnTipoColegio> getYcnTipoColegioList() {
+        return ycnTipoColegioList;
+    }
+
+    public void setYcnTipoColegioList(List<YcnTipoColegio> ycnTipoColegioList) {
+        this.ycnTipoColegioList = ycnTipoColegioList;
     }
 
     @XmlTransient
@@ -285,6 +265,15 @@ public class YcnColegio implements Serializable {
 
     public void setYcnUsuarioColegioList(List<YcnUsuarioColegio> ycnUsuarioColegioList) {
         this.ycnUsuarioColegioList = ycnUsuarioColegioList;
+    }
+
+    @XmlTransient
+    public List<YcnEmail> getYcnEmailList() {
+        return ycnEmailList;
+    }
+
+    public void setYcnEmailList(List<YcnEmail> ycnEmailList) {
+        this.ycnEmailList = ycnEmailList;
     }
 
     @XmlTransient

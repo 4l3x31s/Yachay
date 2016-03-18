@@ -2,6 +2,7 @@ com\yvaganet\entities\YcnColegio_.class
 com\yvaganet\beans\YcnColegioFacadeLocal.class
 com\yvaganet\entities\YcnCiudad.class
 com\yvaganet\beans\YcnPaisFacade.class
+com\yvaganet\beans\YcnCursosFacadeLocal.class
 com\yvaganet\entities\YcnNivelAcademico_.class
 com\yvaganet\entities\YcnCiudad_.class
 com\yvaganet\beans\YcnLocalidadFacadeLocal.class
@@ -23,6 +24,7 @@ com\yvaganet\beans\YcnColegioFacade.class
 com\yvaganet\beans\YcnTipoColegioFacadeLocal.class
 com\yvaganet\beans\YcnUsuarioFacadeLocal.class
 com\yvaganet\entities\YcnLugarExpedicion.class
+com\yvaganet\entities\YcnCursos.class
 com\yvaganet\beans\YcnCiudadFacadeLocal.class
 com\yvaganet\NewSessionBean.class
 com\yvaganet\entities\YcnEmail_.class
@@ -43,6 +45,8 @@ com\yvaganet\beans\YcnPaisFacadeLocal.class
 com\yvaganet\entities\YcnUsuarioColegio_.class
 com\yvaganet\entities\YcnTelefono.class
 com\yvaganet\entities\YcnUsuario.class
+com\yvaganet\entities\YcnCursos_.class
+com\yvaganet\beans\YcnCursosFacade.class
 com\yvaganet\beans\YcnTelefonoFacade.class
 com\yvaganet\entities\YcnPais.class
 com\yvaganet\beans\YcnTelefonoFacadeLocal.class

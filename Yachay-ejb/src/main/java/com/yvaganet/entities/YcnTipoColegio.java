@@ -6,21 +6,20 @@
 package com.yvaganet.entities;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -46,8 +45,9 @@ public class YcnTipoColegio implements Serializable {
     @Size(min = 1, max = 150)
     @Column(name = "TUE_NOMBRE")
     private String tueNombre;
-    @OneToMany(mappedBy = "colTueId")
-    private List<YcnColegio> ycnColegioList;
+    @JoinColumn(name = "TUE_COL_ID", referencedColumnName = "COL_ID")
+    @ManyToOne
+    private YcnColegio tueColId;
 
     public YcnTipoColegio() {
     }
@@ -77,13 +77,12 @@ public class YcnTipoColegio implements Serializable {
         this.tueNombre = tueNombre;
     }
 
-    @XmlTransient
-    public List<YcnColegio> getYcnColegioList() {
-        return ycnColegioList;
+    public YcnColegio getTueColId() {
+        return tueColId;
     }
 
-    public void setYcnColegioList(List<YcnColegio> ycnColegioList) {
-        this.ycnColegioList = ycnColegioList;
+    public void setTueColId(YcnColegio tueColId) {
+        this.tueColId = tueColId;
     }
 
     @Override

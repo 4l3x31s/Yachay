@@ -1,4 +1,5 @@
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\entities\YcnPais.java
+C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\entities\YcnCursos.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\AbstractFacade.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnEmailFacade.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnImagenColegioFacadeLocal.java
@@ -22,7 +23,9 @@ C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnTelefonoFacade.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnNivelAcademicoFacadeLocal.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\entities\YcnNivelAcademico.java
+C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnCursosFacadeLocal.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\entities\YcnTipoColegio.java
+C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnCursosFacade.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnNivelAcademicoFacade.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnTipoColegioFacade.java
 C:\Users\Alexeis\Documents\NetBeansProjects\Yachay\Yachay-ejb\src\main\java\com\yvaganet\beans\YcnColegioFacade.java
