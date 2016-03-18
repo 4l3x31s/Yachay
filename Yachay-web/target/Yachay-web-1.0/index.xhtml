@@ -39,7 +39,8 @@ and open the template in the editor.
                             
                             <h:inputText styleClass="form-control" value="#{paisBean.strNombrePais}" id="txtNombrePais"></h:inputText><br />
                             <h:commandButton id="btnRegistrarPais" action="#{paisBean.insertarPais}" value="Registrar" styleClass="btn btn-default" ></h:commandButton>
-                            <h:commandButton id="btnPrueba" action="#{colegioBean.irColegio(1)}" value="Prueba" styleClass="btn btn-default" ></h:commandButton>
+                            <input type="hidden" value="#{paisBean.idColegio}" ></input>
+                            <h:commandButton id="btnPrueba" action="#{paisBean.irColegio(1)}" value="Prueba" styleClass="btn btn-default" ></h:commandButton>
                             
                         </div>
                     </h:form>

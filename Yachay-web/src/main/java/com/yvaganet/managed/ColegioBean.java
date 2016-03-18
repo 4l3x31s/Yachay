@@ -10,6 +10,7 @@ import com.yvaganet.entities.YcnColegio;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
 
@@ -17,9 +18,21 @@ import javax.faces.bean.ViewScoped;
  *
  * @author Alexeis
  */
-@ManagedBean
-@ViewScoped
+@ManagedBean(name = "colegioBean")
+@RequestScoped
 public class ColegioBean {
+    
+    @ManagedProperty("#{paisBean}")
+    private PaisBean paisBean;
+
+    public PaisBean getPaisBean() {
+        return paisBean;
+    }
+
+    public void setPaisBean(PaisBean paisBean) {
+        this.paisBean = paisBean;
+    }
+    
     
     private YcnColegio ycnColegio;
     private int idCol;
@@ -40,15 +53,11 @@ public class ColegioBean {
     
     public void obtenerColegio(){
         YcnColegio respuesta = ycnColegioFacadeLocal.find(1);
-        System.out.println("Respuesta");
-        System.out.println("colegio obtenido: " + respuesta.getColNombre());
-        System.out.println("colegio obtenido: " + respuesta.getColDireccion());
     }
     
     @PostConstruct
     public void init() {
-        System.out.println("init" + this.getIdCol());
-        this.ycnColegio = this.ycnColegioFacadeLocal.find(this.getIdCol());
+        this.ycnColegio = this.ycnColegioFacadeLocal.find(this.paisBean.getIdColegio());
         
     }
     public YcnColegio getYcnColegio() {
@@ -59,9 +68,7 @@ public class ColegioBean {
         this.ycnColegio = ycnColegio;
     }
     public String irColegio(int idColegio) {
-        System.out.println(idColegio);
         this.setIdCol(idColegio);
-        System.out.println(this.getIdCol());
         return "colegio.xhtml";
     }
     public int getIdCol() {
